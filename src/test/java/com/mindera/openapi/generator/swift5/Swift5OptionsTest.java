@@ -15,21 +15,21 @@
  * limitations under the License.
  */
 
-package com.mindera.openapi.generator.swift5;
+package org.openapitools.codegen.swift5;
 
 import org.openapitools.codegen.AbstractOptionsTest;
 import org.openapitools.codegen.CodegenConfig;
-import com.mindera.openapi.generator.Swift5Generator;
-import com.mindera.openapi.generator.swift5.options.MinderaSwift5OptionsProvider;
+import com.mindera.openapi.generator.Swift5ClientCodegen;
+import org.openapitools.codegen.options.Swift5OptionsProvider;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class Swift5OptionsTest extends AbstractOptionsTest {
-    private Swift5Generator clientCodegen = mock(Swift5Generator.class, mockSettings);
+    private Swift5ClientCodegen clientCodegen = mock(Swift5ClientCodegen.class, mockSettings);
 
     public Swift5OptionsTest() {
-        super(new MinderaSwift5OptionsProvider());
+        super(new Swift5OptionsProvider());
     }
 
     @Override
@@ -40,12 +40,17 @@ public class Swift5OptionsTest extends AbstractOptionsTest {
     @SuppressWarnings("unused")
     @Override
     protected void verifyOptions() {
-        verify(clientCodegen).setSortParamsByRequiredFlag(Boolean.valueOf(MinderaSwift5OptionsProvider.SORT_PARAMS_VALUE));
-        verify(clientCodegen).setProjectName(MinderaSwift5OptionsProvider.PROJECT_NAME_VALUE);
-        verify(clientCodegen).setResponseAs(MinderaSwift5OptionsProvider.RESPONSE_AS_VALUE.split(","));
-        verify(clientCodegen).setNonPublicApi(Boolean.parseBoolean(MinderaSwift5OptionsProvider.NON_PUBLIC_API_REQUIRED_VALUE));
-        verify(clientCodegen).setObjcCompatible(Boolean.parseBoolean(MinderaSwift5OptionsProvider.OBJC_COMPATIBLE_VALUE));
-        verify(clientCodegen).setLenientTypeCast(Boolean.parseBoolean(MinderaSwift5OptionsProvider.LENIENT_TYPE_CAST_VALUE));
-        verify(clientCodegen).setPrependFormOrBodyParameters(Boolean.valueOf(MinderaSwift5OptionsProvider.PREPEND_FORM_OR_BODY_PARAMETERS_VALUE));
+        verify(clientCodegen).setSortParamsByRequiredFlag(Boolean.valueOf(Swift5OptionsProvider.SORT_PARAMS_VALUE));
+        verify(clientCodegen).setProjectName(Swift5OptionsProvider.PROJECT_NAME_VALUE);
+        verify(clientCodegen).setResponseAs(Swift5OptionsProvider.RESPONSE_AS_VALUE.split(","));
+        verify(clientCodegen).setNonPublicApi(Boolean.parseBoolean(Swift5OptionsProvider.NON_PUBLIC_API_REQUIRED_VALUE));
+        verify(clientCodegen).setObjcCompatible(Boolean.parseBoolean(Swift5OptionsProvider.OBJC_COMPATIBLE_VALUE));
+        verify(clientCodegen).setLenientTypeCast(Boolean.parseBoolean(Swift5OptionsProvider.LENIENT_TYPE_CAST_VALUE));
+        verify(clientCodegen).setPrependFormOrBodyParameters(Boolean.valueOf(Swift5OptionsProvider.PREPEND_FORM_OR_BODY_PARAMETERS_VALUE));
+//        verify(clientCodegen).setReadonlyProperties(Boolean.parseBoolean(Swift5OptionsProvider.READONLY_PROPERTIES_VALUE));
+//        verify(clientCodegen).setRemoveMigrationProjectNameClass(Boolean.parseBoolean(Swift5OptionsProvider.REMOVE_MIGRATION_PROJECT_NAME_CLASS_VALUE));
+//        verify(clientCodegen).setGenerateModelAdditionalProperties(Boolean.parseBoolean(Swift5OptionsProvider.GENERATE_MODEL_ADDITIONAL_PROPERTIES_VALUE));
+//        verify(clientCodegen).setHashableModels(Boolean.parseBoolean(Swift5OptionsProvider.HASHABLE_MODELS_VALUE));
+//        verify(clientCodegen).setEnumUnknownDefaultCase(Boolean.parseBoolean(Swift5OptionsProvider.ENUM_UNKNOWN_DEFAULT_CASE_VALUE));
     }
 }

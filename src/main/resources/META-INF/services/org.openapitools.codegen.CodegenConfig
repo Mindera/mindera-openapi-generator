@@ -1,2 +1,1 @@
-com.mindera.openapi.generator.Swift5Generator
-com.mindera.openapi.generator.SpringServerGenerator
+com.mindera.openapi.generator.Swift5ClientCodegen
