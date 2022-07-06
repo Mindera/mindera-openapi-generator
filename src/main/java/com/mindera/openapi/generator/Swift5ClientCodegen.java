@@ -22,6 +22,8 @@ public class Swift5ClientCodegen extends org.openapitools.codegen.languages.Swif
     public Swift5ClientCodegen() {
         super();
 
+        embeddedTemplateDir = templateDir = "mindera-swift5";
+
         this.typeMapping.put("date", "DateWithoutTime");
         this.typeMapping.put("Date", "DateWithoutTime");
         this.typeMapping.put("DateTime", "DateWithTime");
